@@ -9,16 +9,16 @@ function App() {
 
   return (
     <>
-      
-     
+
+
       <div className="card">
-        
-       <h1>Simple Counter Application</h1>
-       <div>
-        <Counter/>
-       </div>
+
+        <h1>Simple Counter Application</h1>
+        <div>
+          <Counter />
+        </div>
       </div>
-      
+
     </>
   )
 }
