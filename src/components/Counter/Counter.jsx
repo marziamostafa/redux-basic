@@ -1,21 +1,27 @@
 import React, { useState } from 'react'
+import Count from '../Count/Count'
+import Button from '../Button/Button'
 
 export default function Counter() {
-    const [count,setCount]=useState(0)
+    const [count, setCount] = useState(0)
 
-    const handleIncrement=()=>{
-setCount((prev)=>prev+1)
+    const handleIncrement = () => {
+        setCount((prev) => prev + 1)
     }
-    const handleDecrement=()=>{
-        setCount((prev)=>prev-1)
-    } 
-  return (
-    <div className='bg-white'>
-        <div>{count}</div>
-        <div>
-            <button className='bg-blue-700' onClick={handleIncrement}>Increment</button>
-            <button className='bg-red-700' onClick={handleDecrement}>Decrement</button>
+    const handleDecrement = () => {
+        setCount((prev) => prev - 1)
+    }
+    return (
+
+        <div className='bg-white border-[1px] border-gray-300 rounded-lg shadow-md p-4 w-[300px] mx-auto mt-10'>
+            <Count count={count} />
+            <div className='flex gap-2 items-center justify-center mt-4'>
+                <Button handler={handleIncrement}>Increment</Button>
+                <Button type="danger" handler={handleDecrement}>Decrement</Button>
+
+            </div>
         </div>
-        </div>
-  )
+
+
+    )
 }

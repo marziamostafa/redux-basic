@@ -47,6 +47,28 @@ ii. Vite with Tailwind — 'tailwindcss init -p' handles it
 
 iii. CRA (Create React App) — has PostCSS under the hood
 
+## Made a counter:
+--> if we want to scale it and used the <Counter> 2 times in the APP.jsx
+
+![alt text](image-3.png)
+
+![alt text](image-4.png)
+
+both are encapsulted and doing separate state management
+
+--> now if we want to show another compnent here <Stats> and show the sum of two <Counter> in <Stats>
+
+![alt text](image-5.png)
+
+here we need to pass the value of <Counter> as props
+
+--> To do that we have to do lifting state up, means we have to lift the value of <Counts> to App.jsx component.
+
+
+
+
+
+
 # problems that I faced:
 
 # tailwind css wasn't working:
