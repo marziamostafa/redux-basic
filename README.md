@@ -133,6 +133,17 @@ reducer(state, action){
 
 --> after that, we will check the action , and based on action we will conditionally change the state
 
+--> if the action is increment, we will do state update for increment, like this
+
+--> finally reducer() changes the state and returns a new state; reducer does it **immutablly**
+
+--> **immutablly**  means, reducer() never changes the main state; it just returns a new **updated** state; and does not mute the old state, as it has to keep the history
+
+--> <Count> and <Stats> component **subscribed** in to redux. so when new updated state comes, redux gives the updated state to those subscribed components, so that they can use it.
+
+
+
+
 
 ## what are the redux terminology?
 
