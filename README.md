@@ -83,6 +83,10 @@ made the handling function in the App.jsx file and passed them as prop to the ch
 --> redux solves those state management problems
 
 # why redux - Concept of redux?
+1. performance optimization benefits**
+2. to make  the application managable
+3. managing props drilling
+4. scale the application easily
 
 --> the things er did previously by lifting up the state:
 
@@ -109,6 +113,8 @@ here <Counter> is used only as a carrier
 those components can take data directly from the central store. -**this store is redux**
 
 ## What is Redux?
+--> a third party library
+
 --> Redux is a flexible -**state container** for javaScript apps that manages our applications state separately
 
 --> redux is written a js and in any js project redux can be used (reactJS, vanillaJS, vueJS, angularJS, remix)
@@ -117,7 +123,7 @@ those components can take data directly from the central store. -**this store is
 
 ## How redux store works?
 1. **action** : user interaction or action (ex:clicking a button) goes to redux as a command. this command is known as action in redux
-2.**dispatch** : make the action to be happened 
+2. **dispatch** : make the action to be happened 
 3. **reducer()** : when any action happens (gets dispatched), how can we define the things that happened? in JS we can define occurred thing with function(). when any action will happen redux will call a function and do some work. that work / function is called **reducer**
 
 
@@ -133,6 +139,8 @@ reducer(state, action){
 
 --> after that, we will check the action , and based on action we will conditionally change the state
 
+--> in the reducer() function there will be the logic
+
 --> if the action is increment, we will do state update for increment, like this
 
 --> finally reducer() changes the state and returns a new state; reducer does it **immutablly**
@@ -146,6 +154,30 @@ reducer(state, action){
 
 
 ## what are the redux terminology?
+
+## setup the existed counter with redux terminology
+
+--> when we setup redux we have to consider, with which feature we will be working
+
+--> when a new feature will be added, we will be adding a redux feature
+
+--> here we have only counter feature
+
+-**RTK**
+
+--> redux **toolkit** : also known as **RTK**, a newer technology 
+
+--> we can keep the code managable with toolkit
+
+-**installation**
+
+npm install @reduxjs/toolkit
+
+npm install react-redux
+
+or, npm install @reduxjs/toolkit react-redux (together)
+
+
 
 
 
