@@ -47,7 +47,7 @@ ii. Vite with Tailwind — 'tailwindcss init -p' handles it
 
 iii. CRA (Create React App) — has PostCSS under the hood
 
-## Made a counter:
+## Made a counter- lifting state up:
 --> if we want to scale it and used the <Counter> 2 times in the APP.jsx
 
 ![alt text](image-3.png)
@@ -74,6 +74,48 @@ so i am creating an initial state
 
 made the handling function in the App.jsx file and passed them as prop to the children components
 
+
+
+
+
+--> all those things we have done before with context api
+
+--> redux solves those state management problems
+
+# why redux - Concept of redux?
+
+--> the things er did previously by lifting up the state:
+
+![alt text](image-11.png)
+
+here <Counter> is used only as a carrier
+
+--> there can be more nested children, application can be complex with so many features
+
+--> if we keep lifting state up, we have to break the tree structure every time 
+
+--> some components becomes only carrier. they are not used in any way, not even using the props
+
+- **How Redux helping?**
+
+--> as we keep breaking the tree structure, **Redux** says let's not keep the state inside the tree structure
+
+--> it keeps the state in another storage, the storage is like data warehouse
+
+--> those components who need the state , will have to **subscribe** to the storage
+
+![alt text](image-12.png)
+
+those components can take data directly from the central store. -**this store is redux**
+
+## What is Redux?
+
+
+
+
+
+
+# what problem redux solves and how?
 
 
 # new learnings:
