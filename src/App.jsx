@@ -5,8 +5,49 @@ import './App.css'
 import Counter from './components/Counter/Counter'
 import Stats from './components/Stats/Stats'
 
+const initialCounter=[
+  {
+   id: 1,         // for counter 1
+   value:0
+  },
+  {
+  id: 2,          // for counter 2
+  value:0
+},
+]
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [counters, setCounters] = useState(initialCounter)
+
+  const totalCount=counters.reduce((sum , current)=>sum+current.value,0)
+
+const handleIncrement=(counterId)=>{
+const updatedCounters=counters.map((counter)=>{
+  if(counter.id===counterId){
+    return{
+      ...counter,
+      value:counter.value+1
+    }
+  }
+  return counter
+})
+setCounters(updatedCounters)
+}
+
+
+
+const handleDecrement=(counterId)=>{
+  const updatedCounters=counters.map((counter)=>{
+    if(counter.id===counterId){
+      return{
+        ...counter,
+        value:counter.value-1
+      }
+    }
+    return counter
+  })
+  setCounters(updatedCounters)
+}
 
   return (
     <>
@@ -16,10 +57,13 @@ function App() {
 
         <h1>Simple Counter Application</h1>
         <div>
-          <Counter />
-          <Counter />
+         {
+          counters.map((counter)=>(
+            <Counter key={counter.id} count={counter.value} onIncrement={()=>handleIncrement(counter.id)} onDecrement={()=>handleDecrement(counter.id)}/>
+          ))
+         }
 
-          <Stats />
+          <Stats totalCount={totalCount}/>
         </div>
       </div>
 

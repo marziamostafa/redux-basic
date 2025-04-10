@@ -54,9 +54,9 @@ iii. CRA (Create React App) — has PostCSS under the hood
 
 ![alt text](image-4.png)
 
-both are encapsulted and doing separate state management
+both are encapsulated and doing separate state management
 
---> now if we want to show another compnent here <Stats> and show the sum of two <Counter> in <Stats>
+--> now if we want to show another component here <Stats> and show the sum of two <Counter> in <Stats>
 
 ![alt text](image-5.png)
 
@@ -64,9 +64,31 @@ here we need to pass the value of <Counter> as props
 
 --> To do that we have to do lifting state up, means we have to lift the value of <Counts> to App.jsx component.
 
+so i am creating an initial state
+
+![alt text](image-6.png)
+
+![alt text](image-7.png)
+
+![alt text](image-10.png)
+
+made the handling function in the App.jsx file and passed them as prop to the children components
 
 
 
+# new learnings:
+## reduce()
+to convert an array to a single value we use reduce()
+
+![alt text](image-8.png)
+
+--> sum is a number holding previous 
+
+--> current is indicating to the current individual array value according to index
+
+--> and the parameter 0 is the initial value of sum
+
+![alt text](image-9.png)
 
 
 # problems that I faced:
