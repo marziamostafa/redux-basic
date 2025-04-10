@@ -109,6 +109,34 @@ here <Counter> is used only as a carrier
 those components can take data directly from the central store. -**this store is redux**
 
 ## What is Redux?
+--> Redux is a flexible -**state container** for javaScript apps that manages our applications state separately
+
+--> redux is written a js and in any js project redux can be used (reactJS, vanillaJS, vueJS, angularJS, remix)
+
+--> redux can also be used in backend with nodeJS
+
+## How redux store works?
+1. **action** : user interaction or action (ex:clicking a button) goes to redux as a command. this command is known as action in redux
+2.**dispatch** : make the action to be happened 
+3. **reducer()** : when any action happens (gets dispatched), how can we define the things that happened? in JS we can define occurred thing with function(). when any action will happen redux will call a function and do some work. that work / function is called **reducer**
+
+
+## reducer()
+
+scenario is: an action happened, we have state in redux store
+
+--> reducer(state,action) function gets the state as 1st parameter and action as 2nd parameter automatically
+
+reducer(state, action){
+    return newState ;
+}
+
+--> after that, we will check the action , and based on action we will conditionally change the state
+
+
+## what are the redux terminology?
+
+
 
 
 
