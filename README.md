@@ -134,7 +134,9 @@ scenario is: an action happened, we have state in redux store
 --> reducer(state,action) function gets the state as 1st parameter and action as 2nd parameter automatically
 
 reducer(state, action){
+
     return newState ;
+    
 }
 
 --> after that, we will check the action , and based on action we will conditionally change the state
@@ -167,6 +169,8 @@ reducer(state, action){
 
 --> redux **toolkit** : also known as **RTK**, a newer technology 
 
+--> not a package; combination of multiple packages
+
 --> we can keep the code managable with toolkit
 
 -**installation**
@@ -177,6 +181,70 @@ npm install react-redux
 
 or, npm install @reduxjs/toolkit react-redux (together)
 
+-**setup**
+
+--> opened a feature folder in src folder, its a convension
+
+--> the feature we have is counter, so we will open a folder counters in the features folder, here we will have some redux oriented files
+
+--> another terminology comes here is **slice**
+
+--> if the application is a pizza, every feature on it is a slice. so we need a slice for every feature. we will open a countersSlice.js file for counters.
+
+![alt text](image-13.png)
+
+--> in redux , while creating file we  can only keep js instead of jsx. because they are just normal javascript function 
+
+--> **createSlice()** is a function provided by the react toolkit , with which we can create the slice
+
+--> in the **createSlice()** there will be some options and we have to give the options in **object**
+
+--> the first field in the object will be name . normally convension is folder name should be given as name
+
+![alt text](image-14.png)
+
+--> then we have to give the **initial state**
+
+![alt text](image-15.png)
+
+--> then we will have to give the **reducers** ; its also an **object**
+
+--> **why reducers ; why not reducer ?** : there is one central reducer but in that reducer there are multiple separate functions.
+
+    one function for increment and one for decrement. for every individual action there is separate function, so there are multiple functions
+
+    we say reeducers cz we can add multiple functions here. reducers will combine them and make them one. reducers is a indicator that now we can add there multiple functions.  
+
+    ![alt text](image-16.png)
+
+--> for counters we need two reducer here. as parameter there will be state and action.
+
+![alt text](image-17.png)
+
+--> as we have multiple counters , we have to get the counterId, we vcan get it by action.payload
+
+--> in this case we can make the state muted by using **immer**. immer is already in the redux dependency.
+
+![alt text](image-18.png)
+
+increment and decrement are partial reducer function
+
+--> we have to export it. here we can see it says reducer; not reducers anymore
+
+--> we have to export the actions as well. actions number will be similar to the reducer , we will get the action name by the reducer name.
+
+--> actions will be named export.
+
+![alt text](image-19.png)
+
+
+## now make the store
+
+file creation: src --> app --> store.js
+
+--> we will make the store with redux. by configureStore()
+
+-->
 
 
 
