@@ -244,8 +244,18 @@ file creation: src --> app --> store.js
 
 --> we will make the store with redux. by configureStore()
 
--->
+--> store only needs reducer 
 
+![alt text](image-20.png)
+
+## use the store
+
+
+## if another features comes ( like videos)
+
+1. make the videoSlice
+2. export the reducer from videoSlice
+3. import the reducer and add it in the store after counter
 
 
 
