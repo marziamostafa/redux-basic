@@ -250,8 +250,16 @@ file creation: src --> app --> store.js
 
 ## use the store
 
+--> wrap the <App> component with provider form react-redux in the main.jsx file
 
-## if another features comes ( like videos)
+--> pass the store as props in the provider
+
+![alt text](image-21.png)
+
+now the application knows that it's using redux
+
+
+## if another feature comes ( like videos)
 
 1. make the videoSlice
 2. export the reducer from videoSlice
