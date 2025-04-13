@@ -363,6 +363,50 @@ this counters comes from the store
 
 ![alt text](image-34.png)
 
+## asynchronous action: Redux thunk/ asynchronous thunk
+
+--> redux store is synchronous. asynchronous work doesn't happen here
+
+--> when we integrate an GET api  , it will take some time to req and fetch the data. but redux won't be waiting for that time, we have to give some synchronous action. now how can we handle this case?
+
+1. when we click on a button,an action gets dispatched; it's not a real action, it's an asynchronous work
+2. when that asynchronous   task will try to enter into the store there will be a middleware; it will work like a gatekeeper before going to the reducer
+3. because after reaching to the reducer it's synchronous
+4. that middleware will intercept
+5.  when the middleware gets the response from the API , then it will create the actual action anf give it to the reducer.
+6. the journey from the button to the middleware will asynchronous and synchronous journey will start when the middleware makes the action.
+7. then the action will be sent to the reducer and the reducer will change the 
+
+instead of action when sent and asynchronous task, its called **asynchronous thunk**
+
+8. we won't call an **action creator** this time, we will call a **thunk function()**
+9. that thunk function will go to the middleware and an action will be returned. 
+
+![alt text](image-35.png)
+
+-**setup - create async thunk**:
+1. lets get data from json placeholder
+2. create a slice for posts
+3. create an initial state
+4. here we will use **extraReducers()** to handle asynchronous tasks
+5. take **builder** as parameter. 
+6. case will be handles by **builder.addCase()**
+
+![alt text](image-36.png)
+
+7. there can be 3 states- promise pending, fulfilled, rejected. we will handle those case using  builder.addCase()
+8. to handle those cases we need to create the asyncThunk and give the name of the action as 1st 
+9. in 2nd parameter we will give the function to call the API
+10. we will fetch the data with API in separate file
+
+![alt text](image-37.png)
+
+![alt text](image-38.png)
+
+
+
+
+
 
 
 # what problem redux solves and how?
