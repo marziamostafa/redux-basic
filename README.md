@@ -83,6 +83,10 @@ made the handling function in the App.jsx file and passed them as prop to the ch
 --> redux solves those state management problems
 
 # why redux - Concept of redux?
+1. performance optimization benefits**
+2. to make  the application manageable
+3. managing props drilling
+4. scale the application easily
 
 --> the things er did previously by lifting up the state:
 
@@ -109,6 +113,8 @@ here <Counter> is used only as a carrier
 those components can take data directly from the central store. -**this store is redux**
 
 ## What is Redux?
+--> a third party library
+
 --> Redux is a flexible -**state container** for javaScript apps that manages our applications state separately
 
 --> redux is written a js and in any js project redux can be used (reactJS, vanillaJS, vueJS, angularJS, remix)
@@ -128,13 +134,136 @@ scenario is: an action happened, we have state in redux store
 --> reducer(state,action) function gets the state as 1st parameter and action as 2nd parameter automatically
 
 reducer(state, action){
+
     return newState ;
+    
 }
 
 --> after that, we will check the action , and based on action we will conditionally change the state
 
+--> in the reducer() function there will be the logic
+
+--> if the action is increment, we will do state update for increment, like this
+
+--> finally reducer() changes the state and returns a new state; reducer does it **immutably**
+
+--> **immutably**  means, reducer() never changes the main state; it just returns a new **updated** state; and does not mute the old state, as it has to keep the history
+
+--> <Count> and <Stats> component **subscribed** in to redux. so when new updated state comes, redux gives the updated state to those subscribed components, so that they can use it.
+
+
+
+
 
 ## what are the redux terminology?
+
+## setup the existed counter with redux terminology
+
+--> when we setup redux we have to consider, with which feature we will be working
+
+--> when a new feature will be added, we will be adding a redux feature
+
+--> here we have only counter feature
+
+-**RTK**
+
+--> redux **toolkit** : also known as **RTK**, a newer technology 
+
+--> not a package; combination of multiple packages
+
+--> we can keep the code manageable with toolkit
+
+-**installation**
+
+npm install @reduxjs/toolkit
+
+npm install react-redux
+
+or, npm install @reduxjs/toolkit react-redux (together)
+
+-**setup**
+
+--> opened a feature folder in src folder, its a convention
+
+--> the feature we have is counter, so we will open a folder counters in the features folder, here we will have some redux oriented files
+
+--> another terminology comes here is **slice**
+
+--> if the application is a pizza, every feature on it is a slice. so we need a slice for every feature. we will open a countersSlice.js file for counters.
+
+![alt text](image-13.png)
+
+--> in redux , while creating file we  can only keep js instead of jsx. because they are just normal javascript function 
+
+--> **createSlice()** is a function provided by the react toolkit , with which we can create the slice
+
+--> in the **createSlice()** there will be some options and we have to give the options in **object**
+
+--> the first field in the object will be name . normally convention is folder name should be given as name
+
+![alt text](image-14.png)
+
+--> then we have to give the **initial state**
+
+![alt text](image-15.png)
+
+--> then we will have to give the **reducers** ; its also an **object**
+
+--> **why reducers ; why not reducer ?** : there is one central reducer but in that reducer there are multiple separate functions.
+
+    one function for increment and one for decrement. for every individual action there is separate function, so there are multiple functions
+
+    we say reducers cz we can add multiple functions here. reducers will combine them and make them one. reducers is a indicator that now we can add there multiple functions.  
+
+    ![alt text](image-16.png)
+
+--> for counters we need two reducer here. as parameter there will be state and action.
+
+![alt text](image-17.png)
+
+--> as we have multiple counters , we have to get the counterId, we can get it by action.payload
+
+--> in this case we can make the state muted by using **immer**. immer is already in the redux dependency.
+
+![alt text](image-18.png)
+
+increment and decrement are partial reducer function
+
+--> we have to export it. here we can see it says reducer; not reducers anymore
+
+--> we have to export the actions as well. actions number will be similar to the reducer , we will get the action name by the reducer name.
+
+--> actions will be named export.
+
+![alt text](image-19.png)
+
+
+## now make the store
+
+file creation: src --> app --> store.js
+
+--> we will make the store with redux. by configureStore()
+
+--> store only needs reducer 
+
+![alt text](image-20.png)
+
+## use the store
+
+--> wrap the <App> component with provider form react-redux in the main.jsx file
+
+--> pass the store as props in the provider
+
+![alt text](image-21.png)
+
+now the application knows that it's using redux
+
+
+## if another feature comes ( like videos)
+
+1. make the videoSlice
+2. export the reducer from videoSlice
+3. import the reducer and add it in the store after counter
 
 
 
