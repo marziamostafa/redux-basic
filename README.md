@@ -263,7 +263,10 @@ now the application knows that it's using redux
 
 1. make the videoSlice
 2. export the reducer from videoSlice
-3. import the reducer and add it in the store after 
+3. export the function creators
+4. create the store with feature name
+5. import the reducer and add it in the store
+6. export  store
 
 ## subscribe to the store
 
@@ -293,7 +296,72 @@ now the application knows that it's using redux
 ![alt text](image-24.png)
 
 
+## overview:
 
+## if another feature comes ( like videos)
+
+1. make the videoSlice
+2. export the reducer from videoSlice
+3. export the function creators
+4. create the store with feature name
+5. import the reducer and add it in the store
+6. export  store
+7. get the data with selector in component
+8. dispatch the action using dispatcher
+
+# Redux debugging:
+
+## redux dev tool setup:
+
+--> in the application end we have used redux toolkit, so we don't need to do anything there
+
+--> we just need to enable a **browser extension** for debugging
+
+--> we have to install that browser extension
+
+--> extension --> manage extension --> chrome web store --> search "redux dev tools"
+
+![alt text](image-25.png)
+
+--> add the extension
+
+![alt text](image-26.png)
+
+redux is used in this page, so the extension is colorful here as the application is in development process. in other pages it has no color
+
+![alt text](image-27.png)
+
+we can even see the redux debugging experience in inspect option
+
+--> final state
+
+![alt text](image-28.png)
+
+this counters comes from the store
+
+--> we can see it in **chart form** also
+
+![alt text](image-29.png)
+
+--> in **raw form**
+
+![alt text](image-30.png)
+
+--> initial state situation
+
+![alt text](image-31.png)
+
+--> we can even track the code dispatch line
+
+![alt text](image-32.png)
+
+--> also jump to any previous state
+
+![alt text](image-33.png)
+
+--> **video** : check on the actions and  state changing by video
+
+![alt text](image-34.png)
 
 
 
