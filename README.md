@@ -263,9 +263,34 @@ now the application knows that it's using redux
 
 1. make the videoSlice
 2. export the reducer from videoSlice
-3. import the reducer and add it in the store after counter
+3. import the reducer and add it in the store after 
+
+## subscribe to the store
+
+--> react-redux package has given some hooks, by using them we can get data from the store
+
+--> in the APP.jsx file we will use **useSelector()** hook to get the counters from the store
+
+--> a call back pattern is a must in the useSelector(); and a state parameter must be added
+
+![alt text](image-23.png)
+
+--> here the state is the whole reducer object. in that object we have the state of counters
 
 
+
+![alt text](image-22.png)
+
+--> the reducer object is a state. in reducer .counters there is the state of 
+
+--> that means the whole redux is single large javascript object. in that object there is counters property and in that property there will be counters object
+
+## action dispatch
+--> to dispatch the action we need a dispatcher hook - useDispatcher() provided by react-redux
+
+--> the increment function that was named exported, is not any function. it's a function creator. means if i call the increment function it will return me an action
+
+![alt text](image-24.png)
 
 
 

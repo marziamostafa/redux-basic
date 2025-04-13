@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Counter from './components/Counter/Counter'
 import Stats from './components/Stats/Stats'
+import { useDispatch, useSelector } from 'react-redux'
+import { decrement, increment } from './features/counters/countersSlice'
 
 const initialCounter=[
   {
@@ -17,38 +19,21 @@ const initialCounter=[
 ]
 
 function App() {
-  const [counters, setCounters] = useState(initialCounter)
+  // const [counters, setCounters] = useState(initialCounter)
 
-  const totalCount=counters.reduce((sum , current)=>sum+current.value,0)
+const counters= useSelector((state)=>state.counters)
+const dispatch = useDispatch()
+
+const totalCount=counters.reduce((sum , current)=>sum+current.value,0)
 
 const handleIncrement=(counterId)=>{
-const updatedCounters=counters.map((counter)=>{
-  if(counter.id===counterId){
-    return{
-      ...counter,
-      value:counter.value+1
-    }
-  }
-  return counter
-})
-setCounters(updatedCounters)
+  dispatch(increment(counterId));
 }
-
-
 
 const handleDecrement=(counterId)=>{
-  const updatedCounters=counters.map((counter)=>{
-    if(counter.id===counterId){
-      return{
-        ...counter,
-        value:counter.value-1
-      }
-    }
-    return counter
-  })
-  setCounters(updatedCounters)
+  dispatch(decrement(counterId))
 }
-
+ 
   return (
     <>
 
