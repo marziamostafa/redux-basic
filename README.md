@@ -117,7 +117,7 @@ those components can take data directly from the central store. -**this store is
 
 ## How redux store works?
 1. **action** : user interaction or action (ex:clicking a button) goes to redux as a command. this command is known as action in redux
-2.**dispatch** : make the action to be happened 
+2. **dispatch** : make the action to be happened 
 3. **reducer()** : when any action happens (gets dispatched), how can we define the things that happened? in JS we can define occurred thing with function(). when any action will happen redux will call a function and do some work. that work / function is called **reducer**
 
 
