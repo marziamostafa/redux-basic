@@ -448,6 +448,16 @@ but when the error happens , it will give the error in action.error
 --> and when we will try to do action dispatch from our react component , we will use the dispatch function, that time we will directly diapatch the thunk instead of action.
 
 
+## Add feature in the store
+
+![alt text](image-43.png)
+
+--> when we inspect 
+
+![alt text](image-44.png)
+
+as we can see it in the initial state, we can say that out store setup is correct
+
 
 
 # what problem redux solves and how?
