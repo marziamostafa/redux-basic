@@ -377,7 +377,7 @@ this counters comes from the store
 6. the journey from the button to the middleware will asynchronous and synchronous journey will start when the middleware makes the action.
 7. then the action will be sent to the reducer and the reducer will change the 
 
-instead of action when sent and asynchronous task, its called **asynchronous thunk**
+instead of action when sent an asynchronous task, its called **asynchronous thunk**
 
 8. we won't call an **action creator** this time, we will call a **thunk function()**
 9. that thunk function will go to the middleware and an action will be returned. 
@@ -490,6 +490,22 @@ as the dependency we will add the dispatch function
 
 
 # what problem redux solves and how?
+
+-->  State Management at Scale
+
+solves by:
+1. Centralized Store
+2. Predictable Updates with Actions & Reducers
+3. Dev Tools, Middleware, and Time Travel Debugging
+
+**Alternative Modern Tools:**
+If Redux feels heavy, you can check:
+
+1. useContext + useReducer (lighter state)
+2. Zustand
+3. Recoil
+4. Jotai
+5. TanStack Query (for data fetching)
 
 
 # new learnings:
