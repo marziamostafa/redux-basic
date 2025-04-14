@@ -404,7 +404,48 @@ instead of action when sent and asynchronous task, its called **asynchronous thu
 ![alt text](image-38.png)
 
 
+## write the case in builder.addCase()
 
+--> there can be 3 state: pending, fulfilled and rejected
+
+-**pending state**
+
+pending state means loading state, to handle that state we will use a reducer
+
+here we won't have any action , as to handle loading state we don't need action
+
+![alt text](image-39.png)
+
+-**fulfilled state**
+
+now we will need action because the actual data is in the action.payload
+
+when the promise will be resolved then the reducer will give you the data in the acction.payload
+
+![alt text](image-40.png)
+
+-**rejected state**
+
+this time isError will be true
+
+from the fetched data , it's possible that there is no error message. so we will add optional chaining.
+
+when the data came , we got it in action.payload
+
+but when the error happens , it will give the error in action.error
+
+![alt text](image-41.png)
+
+
+--> we can chain the builder parameter
+
+![alt text](image-42.png)
+
+
+
+--> we don't have to export the action creator this time. beacuse when we called **createAsyncThunk()** creted action will be automatically given in **"posts/fetchPosts"**
+
+--> and when we will try to do action dispatch from our react component , we will use the dispatch function, that time we will directly diapatch the thunk instead of action.
 
 
 

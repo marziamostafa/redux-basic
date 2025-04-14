@@ -17,10 +17,28 @@ export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
 const postsSlice = createSlice({
   name: "posts",
   initialState,
-  extraReducers: (builder) => {
-    //extraReducers: to handle asynchronous tasks; it's an function
-    builder.addCase();
+  extraReducers: (builder) => {     //extraReducers: to handle asynchronous tasks; it's an function
+
+    builder
+      .addCase(fetchPosts.pending, (state) => {
+        state.isError = false;
+        state.isLoading = true;
+
+      })
+
+      .addCase(fetchPosts.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.posts = action.payload
+
+      })
+
+      .addCase(fetchPosts.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.error = action.error?.message;
+      })
+
   },
 });
 export default postsSlice.reducer;
-export const {} = postsSlice.actions;
+export const { } = postsSlice.actions;
