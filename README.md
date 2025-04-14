@@ -458,6 +458,35 @@ but when the error happens , it will give the error in action.error
 
 as we can see it in the initial state, we can say that out store setup is correct
 
+## action dispatch in the ui
+
+-**subscribe to the store** : using useSelector() and give the useSelector function as parameter
+
+-**dispatch action**
+
+as we don't have the data, for the side effect of data we have to use the useEffect
+
+we also need the dispatch hook to dispatch the thunk inside the useEffect()
+
+as the dependency we will add the dispatch function
+
+![alt text](image-45.png)
+
+-**decide what to render**
+
+--> now for the posts, sometimes it can be loading, it can be error or it can be data
+
+![alt text](image-46.png)
+
+![alt text](image-47.png)
+
+--> in redux dev tool
+
+![alt text](image-48.png)
+
+
+
+
 
 
 # what problem redux solves and how?
